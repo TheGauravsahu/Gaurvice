@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex gap-8 items-center">
         <Link href={"/"}>
           <div className="logo flex items-center gap-2">
-            <Image width={30} height={20} src="/logo.svg" alt="Guarvice logo" />
+            <Image width={30} height={20} src="/logo.svg" alt="Guarvice logo" className="w-fit h-fit" />
             <h2 className="text-xl font-medium">Gaurvice</h2>
           </div>
         </Link>
