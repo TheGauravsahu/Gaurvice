@@ -115,7 +115,7 @@ const BookService = ({ children, businessId }: propsType) => {
               <Calendar
                 mode="single"
                 selected={date}
-                onSelect:any={setDate}
+                onSelect={setDate} // Removed ":any"
                 className="rounded-md border w-fit "
               />
             </div>
