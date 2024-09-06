@@ -4,11 +4,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import BookingHistory from "@/components/BookingHistory";
 import api from "../_services/GlobalApi";
 import { useUser } from "@clerk/nextjs";
+import { Skeleton } from "@/components/ui/skeleton"
 
 const Bookings = () => {
-  const user:any = useUser();
+  const user: any = useUser();
   const [bookings, setBookings] = useState([]);
-  
+
   useEffect(() => {
     if (user) {
       const getBookingList = async () => {
@@ -35,7 +36,15 @@ const Bookings = () => {
           <TabsTrigger value="booked">Bookings</TabsTrigger>
         </TabsList>
         <TabsContent value="booked">
-          <BookingHistory bookings={bookings} />
+          {bookings ? <BookingHistory bookings={bookings} /> : (
+            <div className="flex  space-y-3">
+            <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-[250px]" />
+              <Skeleton className="h-4 w-[200px]" />
+            </div>
+          </div>
+          )}
         </TabsContent>
       </Tabs>
     </div>
