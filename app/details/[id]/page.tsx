@@ -41,13 +41,13 @@ const BusinessDetails = ({ params }: { params: any }) => {
 
   useEffect(() => {
     getBusiness();
-  }, []);
+  });
 
   useEffect(() => {
     if (business) {
       getBusinessByCategory();
     }
-  }, [business]);
+  },);
 
 
   return (

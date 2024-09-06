@@ -38,7 +38,7 @@ const BookService = ({
 
   useEffect(() => {
     date && isBusinessBooked();
-  }, [date]);
+  },);
 
   const getTime = () => {
     const timeList: any = [];
