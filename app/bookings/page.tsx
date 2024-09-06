@@ -6,9 +6,25 @@ import api from "../_services/GlobalApi";
 import { useUser } from "@clerk/nextjs";
 import { Skeleton } from "@/components/ui/skeleton"
 
+type BookingType = {
+  id: string;
+  businessList: {
+    name: string;
+    images: { url: string }[];
+    contactPerson: string;
+    email: string;
+    address: string;
+  };
+  time: string;
+  date: string;
+  bookingStatus: string;
+};
+
+
 const Bookings = () => {
   const user: any = useUser();
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState<BookingType []>([]);
+  // console.log(bookings)
 
   useEffect(() => {
     if (user) {
@@ -36,15 +52,7 @@ const Bookings = () => {
           <TabsTrigger value="booked">Bookings</TabsTrigger>
         </TabsList>
         <TabsContent value="booked">
-          {bookings ? <BookingHistory bookings={bookings} /> : (
-            <div className="flex  space-y-3">
-            <Skeleton className="h-[125px] w-[250px] rounded-xl" />
-            <div className="space-y-2">
-              <Skeleton className="h-4 w-[250px]" />
-              <Skeleton className="h-4 w-[200px]" />
-            </div>
-          </div>
-          )}
+        { bookings.length > 0 ? <BookingHistory bookings={bookings} /> : <p>No Bookings found</p>}
         </TabsContent>
       </Tabs>
     </div>

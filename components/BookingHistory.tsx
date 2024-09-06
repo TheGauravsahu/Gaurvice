@@ -14,7 +14,7 @@ const BookingHistory = ({ bookings }: { bookings: any }) => {
             <div>
               <Image
                 src={item.businessList?.images[0].url}
-                alt={item.businessList.name}
+                alt={item.businessList?.name}
                 width={200}
                 height={400}
                 className="rounded-lg w-fit object-cover"
@@ -25,32 +25,32 @@ const BookingHistory = ({ bookings }: { bookings: any }) => {
               <h2 className="font-semibold text-2xl mb-4">Details</h2>
               <hr />
               <h2 className="font-medium text-lg mt-2">
-                {item.businessList.name}
+                {item.businessList?.name}
               </h2>
-              <p>{item.businessList.address}</p>
+              <p>{item.businessList?.address}</p>
             </div>
             <div className="p-4">
               <h2 className="font-semibold text-2xl mb-4">Timings</h2>
               <hr />
 
-              <p className="font-medium text-lg">{item.date}</p>
-              <p>{item.time}</p>
+              <p className="font-medium text-lg">{item?.date}</p>
+              <p>{item?.time}</p>
             </div>
             <div className="p-4">
               <h2 className="font-semibold text-2xl mb-4">Contact</h2>
               <hr />
 
               <p className="font-medium text-lg mt-2">
-                {item.businessList.contactPerson}
+                {item.businessList?.contactPerson}
               </p>
-              <p>{item.businessList.email}</p>
+              <p>{item.businessList?.email}</p>
             </div>
             <div className="p-4">
               <h2 className="font-semibold text-2xl mb-4">Status</h2>
               <hr />
 
               <p className="capitalize font-medium text-lg mt-2">
-                {item.bookingStatus}
+                {item?.bookingStatus}
               </p>
             </div>
           </div>
