@@ -23,8 +23,8 @@ export function ServicePage() {
                   Your One-Stop Solution for Home Services
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
-                  From cleaning to repairs, painting to shifting - we&apos;ve got all
-                  your household needs covered.
+                  From cleaning to repairs, painting to shifting - we&apos;ve
+                  got all your household needs covered.
                 </p>
               </div>
               <Link href={"/search/Cleaning"}>
@@ -124,9 +124,9 @@ export function ServicePage() {
                 </p>
               </div>
               <Link href={"/search/Cleaning"}>
-              <Button className="bg-gray-900 text-white hover:bg-gray-800">
-                Book Now
-              </Button>
+                <Button className="bg-gray-900 text-white hover:bg-gray-800">
+                  Book Now
+                </Button>
               </Link>
             </div>
           </div>
@@ -136,7 +136,13 @@ export function ServicePage() {
   );
 }
 
-function ServiceCard({ icon, title, description }) {
+type propsType = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+function ServiceCard({ icon, title, description }: propsType) {
   return (
     <Card className="transition-all hover:shadow-lg">
       <CardContent className="p-6 flex flex-col items-center text-center space-y-4">

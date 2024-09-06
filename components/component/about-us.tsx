@@ -226,7 +226,7 @@ export function AboutUs() {
   );
 }
 
-function BriefcaseIcon(props) {
+function BriefcaseIcon(props:any) {
   return (
     <svg
       {...props}
@@ -246,7 +246,7 @@ function BriefcaseIcon(props) {
   );
 }
 
-function CalendarCheckIcon(props) {
+function CalendarCheckIcon(props:any) {
   return (
     <svg
       {...props}
@@ -269,7 +269,7 @@ function CalendarCheckIcon(props) {
   );
 }
 
-function CheckIcon(props) {
+function CheckIcon(props:any) {
   return (
     <svg
       {...props}
@@ -288,7 +288,7 @@ function CheckIcon(props) {
   );
 }
 
-function GaugeIcon(props) {
+function GaugeIcon(props:any) {
   return (
     <svg
       {...props}
@@ -308,7 +308,7 @@ function GaugeIcon(props) {
   );
 }
 
-function ScissorsIcon(props) {
+function ScissorsIcon(props:any) {
   return (
     <svg
       {...props}
@@ -331,7 +331,7 @@ function ScissorsIcon(props) {
   );
 }
 
-function SearchIcon(props) {
+function SearchIcon(props:any) {
   return (
     <svg
       {...props}
@@ -351,7 +351,7 @@ function SearchIcon(props) {
   );
 }
 
-function TruckIcon(props) {
+function TruckIcon(props:any) {
   return (
     <svg
       {...props}
@@ -374,7 +374,7 @@ function TruckIcon(props) {
   );
 }
 
-function WrenchIcon(props) {
+function WrenchIcon(props:any) {
   return (
     <svg
       {...props}
