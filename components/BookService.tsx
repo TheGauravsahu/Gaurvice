@@ -23,7 +23,7 @@ type propsType = {
 };
 
 const BookService = ({ children, businessId }: propsType) => {
-  const [date, setDate] = React.useState<Date | string>("");
+  const [date, setDate] = React.useState<Date | undefined>(undefined);
   const [timeSlot, setTimeSlot] = useState([]);
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [bookedSlot, setBookedSlot] = useState([]);
