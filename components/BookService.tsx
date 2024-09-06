@@ -70,8 +70,8 @@ const BookService = ({
     return res;
   };
 
-  const isSlotBooked = (time: string) => {
-    return bookedSlot.find((item) => item.time == time);
+  const isSlotBooked = (time: any) => {
+    return bookedSlot.find((item:any) => item.time == time);
   };
 
   const saveBooking = () => {
