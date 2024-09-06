@@ -17,19 +17,18 @@ import { useUser } from "@clerk/nextjs";
 import { useToast } from "@/hooks/use-toast";
 import moment from "moment";
 
-const BookService = ({
-  children,
-  businessId,
-}: {
-  children: React.ReactNode;
+type propsType = {
   businessId: string;
-}) => {
+  children: React.ReactNode;
+};
+
+const BookService = ({ children, businessId }: propsType) => {
   const [date, setDate] = React.useState<Date | string>("");
   const [timeSlot, setTimeSlot] = useState([]);
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [bookedSlot, setBookedSlot] = useState([]);
 
-  const user:any = useUser();
+  const user: any = useUser();
   const { toast } = useToast();
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const BookService = ({
 
   useEffect(() => {
     date && isBusinessBooked();
-  },);
+  });
 
   const getTime = () => {
     const timeList: any = [];
@@ -63,7 +62,10 @@ const BookService = ({
   };
 
   const isBusinessBooked = async () => {
-    const res: any = await api.isBookedSlot(businessId, moment(date).format("DD-MM-YYYY"));
+    const res: any = await api.isBookedSlot(
+      businessId,
+      moment(date).format("DD-MM-YYYY")
+    );
     console.log(res);
     setBookedSlot(res.bookings);
     console.log(bookedSlot);
@@ -71,7 +73,7 @@ const BookService = ({
   };
 
   const isSlotBooked = (time: any) => {
-    return bookedSlot.find((item:any) => item.time == time);
+    return bookedSlot.find((item: any) => item.time == time);
   };
 
   const saveBooking = () => {
