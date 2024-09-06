@@ -11,7 +11,7 @@ const Header = () => {
         <Link href={"/"}>
           <div className="logo flex items-center gap-2">
             <Image width={30} height={20} src="/logo.svg" alt="Guarvice logo" className="w-fit h-fit" />
-            <h2 className="text-xl font-medium">Gaurvice</h2>
+            <h2 className="text-xl font-medium"> Gaurvice </h2>
           </div>
         </Link>
 
@@ -30,14 +30,16 @@ const Header = () => {
 
       <div className="flex items-center gap-4">
         <SignedOut>
-          <Link href={"/sign-in"}>
+          <Link href={"/sign-in"} >
             <Button>Sign In</Button>
           </Link>
         </SignedOut>
 
         <SignedIn>
           <Button>
-            <Link href={"/bookings"}>My bookings</Link>
+            <Link href={"/bookings"}>
+            My bookings
+            </Link>
           </Button>
         </SignedIn>
         <SignedIn>
