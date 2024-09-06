@@ -6,7 +6,7 @@ import api from "../_services/GlobalApi";
 import { useUser } from "@clerk/nextjs";
 
 const Bookings = () => {
-  const user = useUser();
+  const user:any = useUser();
   const [bookings, setBookings] = useState([]);
 
   const getBookingList = () => {
