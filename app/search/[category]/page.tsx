@@ -15,22 +15,22 @@ const BusinessByCategory = ({ params }: { params: any }) => {
   const [loading, setLoading] = useState(true); // Loading state
   const router = useRouter();
 
-  const getBusinessByCategory = async () => {
-    try {
-      const res: any = await api.getBusinessByCategory(params.category);
-      setBusinesses(res.businessLists);
-      return res;
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
-    }
-  };
   useEffect(() => {
+    const getBusinessByCategory = async () => {
+      try {
+        const res: any = await api.getBusinessByCategory(params.category);
+        setBusinesses(res.businessLists);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }
+    };
+
     getBusinessByCategory();
-  }, []);
+  }, [params.category]);
 
   const handleClick = (id: String) => {
     router.push(`/details/${id}`);
