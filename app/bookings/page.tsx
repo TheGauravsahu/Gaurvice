@@ -10,12 +10,9 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const getBookingList = () => {
-    api
-      .getBookingList(user.user?.primaryEmailAddress?.emailAddress)
-      .then((res) => {
-        setBookings(res.bookings);
-        console.log(bookings);
-      });
+    const res:any = api.getBookingList(user.user?.primaryEmailAddress?.emailAddress)
+    setBookings(res.bookings);
+    return res
   };
 
   if (user) {
