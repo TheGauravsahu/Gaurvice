@@ -26,7 +26,7 @@ const BookService = ({
 }) => {
   const [date, setDate] = React.useState<Date | string>("");
   const [timeSlot, setTimeSlot] = useState([]);
-  const [selectedTime, setSelectedTime] = useState();
+  const [selectedTime, setSelectedTime] = useState<String | null>("");
   const [bookedSlot, setBookedSlot] = useState([]);
 
   const user = useUser();
