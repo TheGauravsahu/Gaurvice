@@ -26,10 +26,10 @@ const BookService = ({
 }) => {
   const [date, setDate] = React.useState<Date | string>("");
   const [timeSlot, setTimeSlot] = useState([]);
-  const [selectedTime, setSelectedTime] = useState<String | null>("");
+  const [selectedTime, setSelectedTime] = useState<string>("");
   const [bookedSlot, setBookedSlot] = useState([]);
 
-  const user = useUser();
+  const user:any = useUser();
   const { toast } = useToast();
 
   useEffect(() => {
@@ -113,7 +113,7 @@ const BookService = ({
               <Calendar
                 mode="single"
                 selected={date}
-                onSelect={setDate}
+                onSelect:any={setDate}
                 className="rounded-md border w-fit "
               />
             </div>
