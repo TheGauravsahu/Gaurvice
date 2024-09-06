@@ -8,17 +8,25 @@ import { useUser } from "@clerk/nextjs";
 const Bookings = () => {
   const user:any = useUser();
   const [bookings, setBookings] = useState([]);
+  
+  useEffect(() => {
+    if (user) {
+      const getBookingList = async () => {
+        try {
+          const res: any = await api.getBookingList(
+            user.user?.primaryEmailAddress?.emailAddress
+          );
+          setBookings(res.bookings);
+        } catch (error) {
+          console.error("Error fetching bookings:", error);
+        }
+      };
 
-  const getBookingList = () => {
-    const res:any = api.getBookingList(user.user?.primaryEmailAddress?.emailAddress)
-    setBookings(res.bookings);
-    return res
-  };
+      getBookingList();
+    }
+  }, [user]);
 
-  if (user) {
-    getBookingList();
-  }
-
+  // console.log(bookings)
   return (
     <div className="my-10 mx-auto min-w-screen">
       <h1 className="font-semibold text-3xl mb-2">My Bookings</h1>
