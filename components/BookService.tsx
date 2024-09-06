@@ -93,7 +93,7 @@ const BookService = ({ children, businessId }: propsType) => {
         title: "Failed to Book the Service!",
       });
     }
-    setDate(" ");
+    setDate(undefined);
     setSelectedTime(" ");
     return res;
   };
