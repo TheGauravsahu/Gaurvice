@@ -130,7 +130,7 @@ const BusinessDetails = ({ params }: { params: any }) => {
 
               <br />
               <h2 className="font-semibold text-lg my-2">Similar Businesses</h2>
-              <div className="flex gap-6 flex-row lg:flex-col">
+              <div className="flex gap-6 flex-col">
                 {suggestedBusiness.length > 0 &&
                   suggestedBusiness.map((business, index) => (
                     <Link key={index} href={`/details/${business.id}`}>
