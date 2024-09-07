@@ -105,7 +105,7 @@ const BusinessDetails = ({ params }: { params: any }) => {
               <p>{business?.about}</p>
 
               <h2 className="font-semibold text-xl mb-2 mt-8">Gallery</h2>
-              <div className="flex items-center gap-4 ">
+              <div className="flex items-center lg:gap-4 gap-2">
                 {business?.images.map((image, index) => (
                   <div key={index} className="flex gap-2">
                     <Image
