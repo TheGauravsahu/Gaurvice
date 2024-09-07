@@ -52,7 +52,7 @@ const Footer = () => {
                 </li>
                 <a
                   target="_blank"
-                  href="gauravsahu.vercel.app"
+                  href="https://gauravsahu.vercel.app/"
                   className="text-sm text-gray-500"
                 >
                   Designed and Developed by <br /> Gaurav Sahu
