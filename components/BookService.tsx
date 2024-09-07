@@ -140,7 +140,7 @@ const BookService = ({ children, businessId }: propsType) => {
               ))}
             </div>
 
-            <SheetFooter className="my-4">
+            <SheetFooter className="my-4 flex flex-col lg:flex-row gap-4">
               <SheetClose asChild>
                 <Button className="flex gap-1 items-center justify-center">
                   <X size={15} />
